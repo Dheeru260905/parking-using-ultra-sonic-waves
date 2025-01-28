@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Slots</title>
+    <link rel="stylesheet" href="../css/slot-styles.css"> <!-- Updated path to CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Select Slots</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="available-spots.html">Available Spots</a></li>
+                <li><a href="parking-history.html">Parking History</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Select Slots</h2>
+            <div class="slots-container">
+                <div class="slot-box" data-slot="slot1" data-price="100">
+                    Slot 1
+                    <label for="duration-slot1">Duration:</label>
+                    <select id="duration-slot1" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot2" data-price="150">
+                    Slot 2
+                    <label for="duration-slot2">Duration:</label>
+                    <select id="duration-slot2" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot3" data-price="200">
+                    Slot 3
+                    <label for="duration-slot3">Duration:</label>
+                    <select id="duration-slot3" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot4" data-price="250">
+                    Slot 4
+                    <label for="duration-slot4">Duration:</label>
+                    <select id="duration-slot4" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot5" data-price="300">
+                    Slot 5
+                    <label for="duration-slot5">Duration:</label>
+                    <select id="duration-slot5" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot6" data-price="350">
+                    Slot 6
+                    <label for="duration-slot6">Duration:</label>
+                    <select id="duration-slot6" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot7" data-price="400">
+                    Slot 7
+                    <label for="duration-slot7">Duration:</label>
+                    <select id="duration-slot7" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+                <div class="slot-box" data-slot="slot8" data-price="450">
+                    Slot 8
+                    <label for="duration-slot8">Duration:</label>
+                    <select id="duration-slot8" class="duration" required>
+                        <option value="" disabled selected>Select duration</option>
+                        <option value="30-minutes">30 minutes</option>
+                        <option value="1-hour">1 hour</option>
+                        <option value="2-hours">2 hours</option>
+                        <option value="3-hours">3 hours</option>
+                        <option value="4-hours">4 hours</option>
+                    </select>
+                </div>
+            </div>
+            <p id="total-slots">Total Selected Slots: 0</p>
+            <p id="total-price">Total Price: ₹0</p>
+            <form id="slot-selection-form">
+                <input type="hidden" id="selected-slots" name="slots" required>
+            </form>
+            <button id="continue-booking" onclick="window.location.href='payment.html'">Continue Booking</button>
+        </section>
+    </main>
+    <footer>
+        <!-- Removed the copyright information -->
+    </footer>
+    <script src="../js/slot-selection.js"></script> <!-- Updated path to JS file -->
+</body>
+</html>
