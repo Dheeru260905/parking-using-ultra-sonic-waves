@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Parking Spot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(0, 123, 255, 0.9);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            text-align: center;
+        }
+
+        main section {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label, form input, form select, button {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        form input, form select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        form input:focus, form select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header>
+        <h1>Book a Parking Spot</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="parking-history.html"><i class="fas fa-history"></i> Parking History</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Book a Parking Spot</h2>
+            <form id="booking-form" action="select-slot.html">
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="" disabled selected>Select a location</option>
+                    <option value="lb-nagar">LB Nagar</option>
+                    <option value="jubilee-hills">Jubilee Hills</option>
+                    <option value="gachibowli">Gachibowli</option>
+                    <option value="banjara-hills">Banjara Hills</option>
+                    <option value="kukatpally">Kukatpally</option>
+                    <option value="Raidurg">Raidurg</option>
+                </select>
+                <label for="slot">Slot:</label>
+                <select id="slot" name="slot" required>
+                    <option value="" disabled selected>Select a slot</option>
+                </select>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 UltraSonic Parking Solutions</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const locationSelect = document.getElementById('location');
+            const slotSelect = document.getElementById('slot');
+
+            const slots = {
+                'lb-nagar': ["D Mart", "Big Bazaar", "CMR Shopping Mall", "Oxygen Park", "BVK Multiplex"],
+                'jubilee-hills': ["Pedamma Temple", "Mini TTD", "Krishna Kanth Park", "PVR Cineplex", "Ebix LTD"],
+                'gachibowli': ["GMC Stadium", "Phoenix Tower", "Starbucks Cafe", "Sarath city mall", "IT Hub"],
+                'banjara-hills': ["GVK Mall", "Sarvi Restaurant", "Sri Jagannath Temple", "Birla Mandir", "Kalakrithi Art Gallery"],
+                'kukatpally': ["Yashoda Hospital", "Nexsus Mall", "Pegmark Hotel", "Hunda Park", "Lulu Mall"],
+                'Raidurg':["Ikea Mart","Durgam Cheruvu","Inorbit Mall","Mind Space"]
+            };
+
+            function populateSlots() {
+                const selectedLocation = locationSelect.value;
+                slotSelect.innerHTML = '<option value="" disabled selected>Select a slot</option>';
+                if (selectedLocation && slots[selectedLocation]) {
+                    slots[selectedLocation].forEach(slot => {
+                        const option = document.createElement('option');
+                        option.value = slot.toLowerCase().replace(/ /g, '-');
+                        option.textContent = slot;
+                        slotSelect.appendChild(option);
+                    });
+                }
+            }
+
+            locationSelect.addEventListener('change', populateSlots);
+        });
+    </script>
+</body>
+</html>
